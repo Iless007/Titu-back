@@ -133,6 +133,8 @@ console.log(role);
 return res
 .cookie("access_token", token, {
   maxAge: 1000 * 60 * 60, // 1 hora de duración
+  secure: true,                // Requiere HTTPS
+  sameSite: "none", 
 })
 .status(200)
 .json({
